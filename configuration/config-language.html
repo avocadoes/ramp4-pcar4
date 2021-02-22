@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Configuration Language Switching | RAMP4 Documentation</title>
+    <meta name="generator" content="VuePress 1.8.1">
+    
+    <meta name="description" content="documentation site">
+    
+    <link rel="preload" href="/ramp4-pcar4/assets/css/0.styles.342c25e1.css" as="style"><link rel="preload" href="/ramp4-pcar4/assets/js/app.ebba11e7.js" as="script"><link rel="preload" href="/ramp4-pcar4/assets/js/2.4ff3b741.js" as="script"><link rel="preload" href="/ramp4-pcar4/assets/js/22.f1026ba4.js" as="script"><link rel="prefetch" href="/ramp4-pcar4/assets/js/10.5e4cf612.js"><link rel="prefetch" href="/ramp4-pcar4/assets/js/11.218787cc.js"><link rel="prefetch" href="/ramp4-pcar4/assets/js/12.b4de6476.js"><link rel="prefetch" href="/ramp4-pcar4/assets/js/13.29b1622c.js"><link rel="prefetch" href="/ramp4-pcar4/assets/js/14.04a8dd84.js"><link rel="prefetch" href="/ramp4-pcar4/assets/js/15.11435cca.js"><link rel="prefetch" href="/ramp4-pcar4/assets/js/16.bca20261.js"><link rel="prefetch" href="/ramp4-pcar4/assets/js/17.12d9c0b3.js"><link rel="prefetch" href="/ramp4-pcar4/assets/js/18.52725566.js"><link rel="prefetch" href="/ramp4-pcar4/assets/js/19.13f5ed78.js"><link rel="prefetch" href="/ramp4-pcar4/assets/js/20.ac1f0338.js"><link rel="prefetch" href="/ramp4-pcar4/assets/js/21.07b54cac.js"><link rel="prefetch" href="/ramp4-pcar4/assets/js/23.c9acab28.js"><link rel="prefetch" href="/ramp4-pcar4/assets/js/24.3cfe8e22.js"><link rel="prefetch" href="/ramp4-pcar4/assets/js/3.3348aff5.js"><link rel="prefetch" href="/ramp4-pcar4/assets/js/4.ec439105.js"><link rel="prefetch" href="/ramp4-pcar4/assets/js/5.abd65e2b.js"><link rel="prefetch" href="/ramp4-pcar4/assets/js/6.36d4639b.js"><link rel="prefetch" href="/ramp4-pcar4/assets/js/7.7943861c.js"><link rel="prefetch" href="/ramp4-pcar4/assets/js/8.c59bcb9a.js"><link rel="prefetch" href="/ramp4-pcar4/assets/js/9.da860eed.js">
+    <link rel="stylesheet" href="/ramp4-pcar4/assets/css/0.styles.342c25e1.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/ramp4-pcar4/" class="home-link router-link-active"><!----> <span class="site-name">RAMP4 Documentation</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/ramp4-pcar4/" class="nav-link">
+  Current
+</a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/ramp4-pcar4/" class="nav-link">
+  Current
+</a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>Configuration</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/ramp4-pcar4/configuration/config-language.html" aria-current="page" class="active sidebar-link">Configuration Language Switching</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/ramp4-pcar4/configuration/config-language.html#registering-configs" class="sidebar-link">Registering Configs</a></li></ul></li><li><a href="/ramp4-pcar4/configuration/migration.html" class="sidebar-link">Config Migration Guide</a></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="configuration-language-switching"><a href="#configuration-language-switching" class="header-anchor">#</a> Configuration Language Switching</h1> <p>The main configuration file in RAMP to use is determined by the current language of the app. Each language is restricted to being linked to a single config and is in the format of key-value pairings where the key is the language code with its associated formatted config object as the value.</p> <div class="language- extra-class"><pre class="language-text"><code>registeredConfigs = {
+    en: enConfig,
+    fr: frConfig,
+    es: esConfig
+}
+</code></pre></div><h2 id="registering-configs"><a href="#registering-configs" class="header-anchor">#</a> Registering Configs</h2> <p>In order to register a config on app startup, the user can pass in one or more configs as part of a constructor parameter when making the call to initialize the RAMP Instance.</p> <p>In the RAMP instance constructor, the first config (required) will be registered for all supported app languages (contained in <code>i18n.messages</code>). Any subsequent config file will be registered directly to its specified language.</p> <p><strong>TODO</strong>: link a doc on <code>i18n</code> setup <a href="">here</a> when complete</p> <p>A more detailed description of the process will be covered with the examples below.</p> <h3 id="example-1-passing-a-single-config-in-ramp-instance-constructor"><a href="#example-1-passing-a-single-config-in-ramp-instance-constructor" class="header-anchor">#</a> Example 1: Passing a single config in RAMP Instance constructor</h3> <div class="language-typescript= extra-class"><pre class="language-text"><code>new RAMP.Instance(document.getElementById('app'), { en: enConfig })
+</code></pre></div><p>If the user chooses to pass a single config like above, RAMP will take that config and populate it for all available app languages in <code>i18n.messages</code>.</p> <p>For example, if <code>i18n.messages</code> contains <strong>en</strong>, <strong>fr</strong> and <strong>es</strong>, then the registered configs by the end of the instance constructor will look like this:</p> <div class="language- extra-class"><pre class="language-text"><code>registeredConfigs = {
+    'en': enConfig,
+    'fr': enConfig,
+    'es': enConfig
+}
+</code></pre></div><h3 id="example-2-passing-multiple-configs-in-ramp-instance-constructor"><a href="#example-2-passing-multiple-configs-in-ramp-instance-constructor" class="header-anchor">#</a> Example 2: Passing multiple configs in RAMP Instance constructor</h3> <div class="language-typescript= extra-class"><pre class="language-text"><code>new RAMP.Instance(document.getElementById('app'), {
+    en: enConfig,
+    fr: frConfig
+})
+</code></pre></div><p>If the user chooses to pass in more than one config file, each user specified language will be linked to its unique config, while any remaining languages in <code>i18n.messages</code> will default to the first config passed in the parameter. The registered configs will look like this at the end of the instance constructor:</p> <div class="language- extra-class"><pre class="language-text"><code>registeredConfigs = {
+    'en': enConfig,
+    'fr': frConfig,
+    'es': enConfig
+}
+</code></pre></div><h3 id="switching-languages"><a href="#switching-languages" class="header-anchor">#</a> Switching Languages</h3> <p>Switching to a different language in-app will cause RAMP to conduct an analysis on <code>registeredConfigs</code> to identify the config pertaining to the new app language.</p> <p>Say we change the app language from <strong>en</strong> to <strong>fr</strong>. In the first example, the new active config remains the same (<code>enConfig</code>) and in the second example, the new active config changes from <code>enConfig</code> to <code>frConfig</code>.</p> <p><strong>Note</strong>: If the app switches to a language that is not associated with a config (i.e., language unsupported by RAMP), an error will be thrown with a message informing the user.</p></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><!----> <span class="next"><a href="/ramp4-pcar4/configuration/migration.html">
+        Config Migration Guide
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/ramp4-pcar4/assets/js/app.ebba11e7.js" defer></script><script src="/ramp4-pcar4/assets/js/2.4ff3b741.js" defer></script><script src="/ramp4-pcar4/assets/js/22.f1026ba4.js" defer></script>
+  </body>
+</html>
