@@ -1,0 +1,11 @@
+{
+  "name": "ramp-sample-layers",
+  "version": "1.0.0",
+  "description": "A sample repo of RAMP4 external layers.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}

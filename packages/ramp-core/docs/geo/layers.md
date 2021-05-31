@@ -375,5 +375,11 @@ myLayer.applySqlFilter(['grid'], 'uid');
 ```
 ## Custom Layers
 
-TODO flush out as part of issue ###
+TODO flush out as part of issue #399
 Provide an example (e.g. a pre-cooked layer that always loads the happy json)
+
+(draft notes)
+- define external custom layer class that implements LayerBase (from ramp-core/src/api/geo/api)
+- add custom layer definition to store (can do so in ramp-starter.js)
+- create instance of layer and add to store
+- add layer to legend

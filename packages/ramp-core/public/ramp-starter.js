@@ -484,6 +484,32 @@ rInstance.fixture.add('gazebo');
 rInstance.fixture.add('diligord', window.hostFixtures.diligord);
 rInstance.fixture.add('mouruge', window.hostFixtures.mouruge);
 
+// custom layer config
+let testConfig = {
+    id: 'Point',
+    layerType: 'testFeature',
+    point: {
+        x: -77,
+        y: 77
+    },
+    state: {
+        opacity: 0.8,
+        visibility: true
+    },
+    customRenderer: {}
+}
+
+// add layer definition to store
+rInstance.geo.layer.addLayerDef('testFeature', TestFeatureLayer.constructor)
+.then((result) => {
+    console.log('layer def added: ', result);
+    // create test layer instance
+    rInstance.geo.layers.createLayer(testConfig);
+})
+.catch((err) => {
+    console.log(err);
+});
+
 // add export-v1 fixtures
 rInstance.fixture.add('export-v1');
 

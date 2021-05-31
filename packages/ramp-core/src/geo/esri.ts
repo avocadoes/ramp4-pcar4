@@ -52,6 +52,8 @@ import EsriProjectParameters from '@arcgis/core/tasks/support/ProjectParameters'
 import EsriQuery from '@arcgis/core/tasks/support/Query';
 import EsriFeatureFilter from '@arcgis/core/views/layers/support/FeatureFilter';
 import EsriMapView from '@arcgis/core/views/MapView';
+import EsriLayerView from '@arcgis/core/views/View';
+import EsriFeatureLayerProperties from '@arcgis/core/layers/FeatureLayer';
 import EsriBasemapGallery from '@arcgis/core/widgets/BasemapGallery';
 import EsriScaleBar from '@arcgis/core/widgets/ScaleBar';
 
@@ -78,6 +80,8 @@ export {
     EsriMap,
     EsriMapImageLayer,
     EsriMapView,
+    EsriLayerView,
+    EsriFeatureLayerProperties,
     EsriMultipoint,
     EsriPictureMarkerSymbol,
     EsriPrintParameters,
